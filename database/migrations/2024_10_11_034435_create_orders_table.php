@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
-            $table->decimal('grand_total', 10, 2)->nullable();
+            $table->decimal('grand_total', 50, 2)->nullable();
             $table->String('payment_method')->nullable();
             $table->string('payment_status')->nullable();
             $table->enum('status', ['new', 'processing', 'shipped', 'delivered', 'canceled'])->default('new');
             $table->string('currency')->nullable();
-            $table->decimal('shipping_amount', 10, 2)->nullable();
+            $table->decimal('shipping_amount', 50, 2)->nullable();
             $table->string('shipping_method')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();

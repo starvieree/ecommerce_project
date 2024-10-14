@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->cascadeOnDelete();
             $table->integer('quantity')->default(1);
-            $table->decimal('unit_amount', 10, 2)->nullable();
-            $table->decimal('total_amount', 10, 2)->nullable();
+            $table->decimal('unit_amount', 50, 2)->nullable();
+            $table->decimal('total_amount', 50, 2)->nullable();
             $table->timestamps();
         });
     }
