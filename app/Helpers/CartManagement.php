@@ -68,7 +68,7 @@ class CartManagement
 
     // get all cart items from cookie
     static public function getCartItemsFromCookie() {
-        $cart_items = json_encode(Cookie::get('cart_items'), true);
+        $cart_items = json_decode(Cookie::get('cart_items'), true);
         if (!$cart_items) {
             $cart_items = [];
         }
