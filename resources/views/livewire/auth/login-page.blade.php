@@ -20,6 +20,14 @@
 
                         <!-- Form -->
                         <form wire:submit.prevent='save'>
+
+                            @if (session('error'))
+                                <div class="mt-2 bg-red-500 text-sm text-white rounded-lg p-4 mb-4" role="alert"
+                                    tabindex="-1" aria-labelledby="hs-solid-color-danger-label">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
+
                             <div class="grid gap-y-4">
                                 <!-- Form Group -->
                                 <div>
@@ -70,7 +78,8 @@
                                         @enderror
                                     </div>
                                     @error('password')
-                                        <p class="hidden text-xs text-red-600 mt-2" id="password-error">{{ $message }}</p>
+                                        <p class="hidden text-xs text-red-600 mt-2" id="password-error">{{ $message }}
+                                        </p>
                                     @enderror
                                 </div>
                                 <!-- End Form Group -->
